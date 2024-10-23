@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/justdema/OOP/MAI-OOP-Labs/lab1/src/main.cpp" "CMakeFiles/main.dir/src/main.cpp.o" "gcc" "CMakeFiles/main.dir/src/main.cpp.o.d"
-  "/home/justdema/OOP/MAI-OOP-Labs/lab1/src/solution.cpp" "CMakeFiles/main.dir/src/solution.cpp.o" "gcc" "CMakeFiles/main.dir/src/solution.cpp.o.d"
+  "/home/justdema/OOP/MAI-OOP-Labs/lab2/src/main.cpp" "CMakeFiles/main.dir/src/main.cpp.o" "gcc" "CMakeFiles/main.dir/src/main.cpp.o.d"
+  "/home/justdema/OOP/MAI-OOP-Labs/lab2/src/solution.cpp" "CMakeFiles/main.dir/src/solution.cpp.o" "gcc" "CMakeFiles/main.dir/src/solution.cpp.o.d"
   )
 
 # Targets to which this target links.

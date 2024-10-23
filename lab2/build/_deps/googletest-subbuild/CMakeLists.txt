@@ -14,8 +14,8 @@ project(googletest-populate NONE)
 include(ExternalProject)
 ExternalProject_Add(googletest-populate
                      "UPDATE_DISCONNECTED" "False" "URL" "https://github.com/google/googletest/archive/release-1.11.0.zip"
-                    SOURCE_DIR          "/home/justdema/OOP/MAI-OOP-Labs/lab1/build/_deps/googletest-src"
-                    BINARY_DIR          "/home/justdema/OOP/MAI-OOP-Labs/lab1/build/_deps/googletest-build"
+                    SOURCE_DIR          "/home/justdema/OOP/MAI-OOP-Labs/lab2/build/_deps/googletest-src"
+                    BINARY_DIR          "/home/justdema/OOP/MAI-OOP-Labs/lab2/build/_deps/googletest-build"
                     CONFIGURE_COMMAND   ""
                     BUILD_COMMAND       ""
                     INSTALL_COMMAND     ""

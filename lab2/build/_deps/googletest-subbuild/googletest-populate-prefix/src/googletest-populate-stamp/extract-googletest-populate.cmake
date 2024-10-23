@@ -1,7 +1,7 @@
 # Make file names absolute:
 #
-get_filename_component(filename "/home/justdema/OOP/MAI-OOP-Labs/lab1/build/_deps/googletest-subbuild/googletest-populate-prefix/src/release-1.11.0.zip" ABSOLUTE)
-get_filename_component(directory "/home/justdema/OOP/MAI-OOP-Labs/lab1/build/_deps/googletest-src" ABSOLUTE)
+get_filename_component(filename "/home/justdema/OOP/MAI-OOP-Labs/lab2/build/_deps/googletest-subbuild/googletest-populate-prefix/src/release-1.11.0.zip" ABSOLUTE)
+get_filename_component(directory "/home/justdema/OOP/MAI-OOP-Labs/lab2/build/_deps/googletest-src" ABSOLUTE)
 
 message(STATUS "extracting...
      src='${filename}'
