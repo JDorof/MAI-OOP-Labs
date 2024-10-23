@@ -77,14 +77,6 @@ TEST(SevenConstructors, StringException) {
     EXPECT_ANY_THROW(Seven sev("1234g6"));
 }
 
-TEST(SevenConstructors, ConstructorWithHyphenation) {
-    Seven sev({'7','6','6','1'});
-    for (size_t i = 0; i < 3; ++i) {
-        ASSERT_EQ(sev.arr[i], '0');
-    }
-    ASSERT_EQ(sev.arr[3], '2');
-}
-
 TEST(SevenComparison, BiggerSelf) {
     Seven sev("11");
     Seven sev1("11");
@@ -240,13 +232,71 @@ TEST(SevenAddition, AdditionWithDifferentOrders) {
 }
 
 TEST(SevenAddition, AdditionWithDifferentOrdersWithHyphenation) {
-    Seven sev1("657");
+    Seven sev1("656");
     Seven sev2("44444");
     Seven sum = sev1 + sev2;
     ASSERT_EQ(sum.size, 5);
     ASSERT_EQ(sum.arr[0], '3');
     ASSERT_EQ(sum.arr[1], '3');
-    ASSERT_EQ(sum.arr[2], '5');
+    ASSERT_EQ(sum.arr[2], '4');
     ASSERT_EQ(sum.arr[3], '5');
     ASSERT_EQ(sum.arr[4], '4');
+}
+
+TEST(SevenSubtraction, SimpleSubtraction) {
+    Seven sev1("223");
+    Seven sev2("1");
+    Seven sub = sev1 - sev2;
+    ASSERT_EQ(sub.size, 3);
+    for (size_t i = 0; i < sub.size; ++i) {
+        ASSERT_EQ(sub.arr[i], char((i + 1) + 48));
+    }
+}
+
+TEST(SevenSubtraction, SubtractionToZero) {
+    Seven sev1("223");
+    Seven sev2("223");
+    Seven sub = sev1 - sev2;
+    ASSERT_EQ(sub.size, 1);
+    ASSERT_EQ(sub.arr[0], '0');
+}
+
+TEST(SevenSubtraction, SubtractionException) {
+    Seven sev1("11");
+    Seven sev2("222");
+    EXPECT_ANY_THROW(sev1 - sev2);
+}
+
+TEST(SevenSubtraction, SubtractionWithHyphenation) {
+    Seven sev1("01");
+    Seven sev2("1");
+    Seven sub = sev1 - sev2;
+    ASSERT_EQ(sub.size, 2);
+    ASSERT_EQ(sub.arr[0], '6');
+    ASSERT_EQ(sub.arr[1], '0');
+}
+
+TEST(SevenSubtraction, SubtractionWithHyphenationRandomNumber) {
+    Seven sev1("41314321");
+    Seven sev2("1523413");
+    Seven sub = sev1 - sev2; //6165033
+    ASSERT_EQ(sub.size, 8);
+    ASSERT_EQ(sub.arr[0], '3');
+    ASSERT_EQ(sub.arr[1], '3');
+    ASSERT_EQ(sub.arr[2], '0');
+    ASSERT_EQ(sub.arr[3], '5');
+    ASSERT_EQ(sub.arr[4], '6');
+    ASSERT_EQ(sub.arr[5], '1');
+    ASSERT_EQ(sub.arr[6], '6');
+    ASSERT_EQ(sub.arr[7], '0');
+}
+
+TEST(SevenSubtraction, SubtractionWithHyphenationBigger) {
+    Seven sev1("000000000000000001");
+    Seven sev2("1");
+    Seven sub = sev1 - sev2;
+    for (int i = 0; i < sub.size - 1; ++i) {
+        ASSERT_EQ(sub.arr[i], '6');
+    }
+    ASSERT_EQ(sub.arr[sub.size - 1], '0');
 }

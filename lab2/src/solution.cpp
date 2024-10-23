@@ -1,17 +1,16 @@
 #include "solution.h"
-
+#include <iostream>
 
 Seven::Seven() : arr(nullptr), size(0) {}
 
 
 Seven::Seven(const size_t n, const unsigned char c) : arr(nullptr), size(0) {
-    if (c < '0' || c > '9') throw std::invalid_argument("Use chars between '0' and '9'");
+    if (c < '0' || c > '6') throw std::invalid_argument("Use chars between '0' and '6'");
     if (c != '0') {
         this->arr = new unsigned char[n];
         for (; this->size < n; ++this->size) {
             new (this->arr + this->size) unsigned char(c);
         }
-        Numerical_optimization();
     } else {
         this->arr = new unsigned char[1];
         new (this->arr) unsigned char(c);
@@ -30,26 +29,24 @@ Seven::Seven(const size_t n, const unsigned char* other_arr) : size(0) {
 
 Seven::Seven(const std::initializer_list<unsigned char>& init) : size(0) {
     for (const unsigned char& c : init)
-    if (c < '0' || c > '9') throw std::invalid_argument("Use chars between '0' and '9'");
+    if (c < '0' || c > '6') throw std::invalid_argument("Use chars between '0' and '6'");
     
     this->arr = new unsigned char[init.size()];
     for (const unsigned char& c : init) {
         new (this->arr + this->size) unsigned char(c);
         ++this->size;
     }
-    Numerical_optimization();
 }
 
 
 Seven::Seven(const std::string &t) : size(0) {
     for (const unsigned char& c : t)
-    if (c < '0' || c > '9') throw std::invalid_argument("Use chars between '0' and '9'");
+    if (c < '0' || c > '6') throw std::invalid_argument("Use chars between '0' and '6'");
     
     this->arr = new unsigned char[t.size()];
     for (; this->size < t.size(); ++this->size) {
         new (this->arr + this->size) unsigned char(t[this->size]);
     }
-    Numerical_optimization();
 }
 
 
@@ -180,4 +177,27 @@ Seven Seven::operator+(const Seven& other) {
 }
 
 
-// Seven Seven::operator-(const Seven& other) {}
+Seven Seven::operator-(const Seven& other) {
+    if (*this < other) throw std::invalid_argument("You cannot subtract a number greater than that given in an unsigned type");
+    if (*this == other) return Seven(1, '0');
+    unsigned char new_arr[this->size];
+    for (int i = 0; i < this->size; ++i) {
+        new_arr[i] = this->arr[i];
+    }
+    for (int i = 0; i < other.size; ++i) {
+        if (new_arr[i] >= other.arr[i]) {
+            new_arr[i] = static_cast<unsigned char>(new_arr[i] - other.arr[i] + 48);
+        } else {
+            new_arr[i] = static_cast<unsigned char>(new_arr[i] - other.arr[i] + '7');
+            for (int j = 1;;++j) {
+                if (new_arr[i + j] > '0' && new_arr[i + j] < '7') {
+                    --new_arr[i + j]; 
+                    break;
+                } else if (new_arr[i + j] == '0') {
+                    new_arr[i + j] = '6';
+                }
+            }
+        }
+    }
+    return Seven(this->size, new_arr);
+}
