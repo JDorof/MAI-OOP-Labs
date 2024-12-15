@@ -1,39 +1,47 @@
-# Минимальная версия CMake
 cmake_minimum_required(VERSION 3.10)
+project(gtest)
 
-# Название проекта
-project(EluminateUnsetBits)
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Устанавливаем стандарт C++
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-# Включаем поддержку тестирования
-enable_testing()
+# Добавление опций компиляции
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror=maybe-uninitialized")
 
-# Пути к исходникам и тестам
-set(SRC_DIR "${CMAKE_SOURCE_DIR}/src")
-set(TEST_DIR "${CMAKE_SOURCE_DIR}/tests")
-
-# Добавляем исполняемый файл для основной программы
-add_executable(main src/main.cpp ${SRC_DIR}/solution.cpp)
-
-# Подключаем библиотеку Google Test через FetchContent (она автоматически загрузит и соберет Google Test)
+# Установка Google Test
 include(FetchContent)
 FetchContent_Declare(
   googletest
-  URL https://github.com/google/googletest/archive/release-1.11.0.zip
+  GIT_REPOSITORY https://github.com/google/googletest.git
+  GIT_TAG v1.15.2
+  TLS_VERIFY false
 )
-# Принудительное использование статических библиотек
+# For Windows: Prevent overriding the parent project's compiler/linker settings
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
-# Добавляем исполняемый файл для тестов
-add_executable(unit_tests ${TEST_DIR}/unit_tests.cpp ${SRC_DIR}/solution.cpp)
 
-# Линкуем тесты с библиотекой Google Test и основным решением
-target_link_libraries(unit_tests gtest_main)
+add_library(
+    ${CMAKE_PROJECT_NAME}_lib  
+    src/figure.cpp 
+    src/figure_vector.cpp 
+    src/point.cpp 
+    src/romb.cpp 
+    src/trapezium.cpp 
+    src/pentagon.cpp
+)
 
-# Добавляем тесты для CTest
-add_test(NAME unit_tests COMMAND unit_tests)
+add_executable(${CMAKE_PROJECT_NAME}_exe main.cpp)
 
+target_link_libraries(${CMAKE_PROJECT_NAME}_exe PRIVATE ${CMAKE_PROJECT_NAME}_lib)
+
+# Добавление тестов
+enable_testing()
+
+# add_executable(tests test)
+add_executable(tests test/unit.cpp)
+
+target_link_libraries(tests ${CMAKE_PROJECT_NAME}_lib gtest_main)
+
+# Добавление тестов в тестовый набор
+add_test(NAME test COMMAND tests)

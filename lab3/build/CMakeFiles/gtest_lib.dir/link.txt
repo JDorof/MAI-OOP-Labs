@@ -1,0 +1,2 @@
+/usr/bin/ar qc libgtest_lib.a CMakeFiles/gtest_lib.dir/src/figure.cpp.o CMakeFiles/gtest_lib.dir/src/figure_vector.cpp.o CMakeFiles/gtest_lib.dir/src/point.cpp.o CMakeFiles/gtest_lib.dir/src/romb.cpp.o CMakeFiles/gtest_lib.dir/src/trapezium.cpp.o CMakeFiles/gtest_lib.dir/src/pentagon.cpp.o
+/usr/bin/ranlib libgtest_lib.a

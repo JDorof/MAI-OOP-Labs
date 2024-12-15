@@ -1,0 +1,72 @@
+Start testing: Dec 15 20:07 MSK
+----------------------------------------------------------
+1/1 Testing: test
+1/1 Test: test
+Command: "/home/justdema/OOP/MAI-OOP-Labs/lab3/build/tests"
+Directory: /home/justdema/OOP/MAI-OOP-Labs/lab3/build
+"test" start time: Dec 15 20:07 MSK
+Output:
+----------------------------------------------------------
+[==========] Running 17 tests from 5 test suites.
+[----------] Global test environment set-up.
+[----------] 1 test from Construction
+[ RUN      ] Construction.test_00
+[       OK ] Construction.test_00 (0 ms)
+[----------] 1 test from Construction (0 ms total)
+
+[----------] 6 tests from Trapezium
+[ RUN      ] Trapezium.test_00
+[       OK ] Trapezium.test_00 (0 ms)
+[ RUN      ] Trapezium.test_01
+[       OK ] Trapezium.test_01 (0 ms)
+[ RUN      ] Trapezium.test_02
+[       OK ] Trapezium.test_02 (0 ms)
+[ RUN      ] Trapezium.test_03
+[       OK ] Trapezium.test_03 (0 ms)
+[ RUN      ] Trapezium.test_04
+[       OK ] Trapezium.test_04 (0 ms)
+[ RUN      ] Trapezium.test_05
+[       OK ] Trapezium.test_05 (0 ms)
+[----------] 6 tests from Trapezium (0 ms total)
+
+[----------] 6 tests from Romb
+[ RUN      ] Romb.test_00
+[       OK ] Romb.test_00 (0 ms)
+[ RUN      ] Romb.test_01
+[       OK ] Romb.test_01 (0 ms)
+[ RUN      ] Romb.test_02
+[       OK ] Romb.test_02 (0 ms)
+[ RUN      ] Romb.test_03
+[       OK ] Romb.test_03 (0 ms)
+[ RUN      ] Romb.test_04
+[       OK ] Romb.test_04 (0 ms)
+[ RUN      ] Romb.test_05
+[       OK ] Romb.test_05 (0 ms)
+[----------] 6 tests from Romb (0 ms total)
+
+[----------] 1 test from Pentagon
+[ RUN      ] Pentagon.test_00
+[       OK ] Pentagon.test_00 (0 ms)
+[----------] 1 test from Pentagon (0 ms total)
+
+[----------] 3 tests from Vector
+[ RUN      ] Vector.test_03
+[       OK ] Vector.test_03 (0 ms)
+[ RUN      ] Vector.test_04
+[       OK ] Vector.test_04 (0 ms)
+[ RUN      ] Vector.test_05
+[       OK ] Vector.test_05 (0 ms)
+[----------] 3 tests from Vector (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 17 tests from 5 test suites ran. (0 ms total)
+[  PASSED  ] 17 tests.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"test" end time: Dec 15 20:07 MSK
+"test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Dec 15 20:07 MSK
