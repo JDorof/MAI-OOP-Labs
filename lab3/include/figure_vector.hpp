@@ -5,11 +5,11 @@ class FigureVector
 {
     public:
         FigureVector();
-        void resize(int new_size);
-        int  size() const noexcept;
-        void push_back(Figure* val)noexcept;
-        const Figure* get(int ind) const;
-        void remove(int ind) ;
+        void Resize(int new_size);
+        int  Size() const noexcept;
+        void Push_back(Figure* val)noexcept;
+        const Figure* Get(int ind) const;
+        void Remove(int ind) ;
 
         ~FigureVector();
 

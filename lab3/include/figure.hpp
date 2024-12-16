@@ -7,12 +7,12 @@
 class Figure{
 public:
     Figure() = default; 
-    virtual Point get_center() const noexcept = 0; 
+    virtual Point Get_center() const noexcept = 0; 
     virtual explicit operator double() const noexcept = 0; 
     virtual ~Figure() = default; 
     static double eps;
-    double scalar_prod(Point p1, Point p2) const noexcept;
-    double vector_prod(Point p1, Point p2) const noexcept;
+    double Scalar_prod(Point p1, Point p2) const noexcept;
+    double Vector_prod(Point p1, Point p2) const noexcept;
 private:
-    virtual double get_square() const noexcept = 0;
+    virtual double Get_square() const noexcept = 0;
 };

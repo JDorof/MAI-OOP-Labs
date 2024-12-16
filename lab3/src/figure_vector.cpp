@@ -8,7 +8,7 @@ FigureVector::FigureVector() : buf(nullptr), size_(0), cap(3), head(0){
 }
 
 
-void FigureVector::resize(int new_size) {
+void FigureVector::Resize(int new_size) {
     Figure** tmp = new Figure*[new_size];
     for (int i = 0; i < new_size; i++) {
         tmp[i] = nullptr;
@@ -23,13 +23,13 @@ void FigureVector::resize(int new_size) {
     head = 0;
 }
 
-int FigureVector::size() const noexcept { 
+int FigureVector::Size() const noexcept { 
     return size_;
 }
 
-void FigureVector::push_back(Figure* val) noexcept {
+void FigureVector::Push_back(Figure* val) noexcept {
     if (size_ == cap) {
-        resize(cap * 2);
+        Resize(cap * 2);
     }
     int ind = (head + size_) % cap;
     buf[ind] = val;
@@ -37,7 +37,7 @@ void FigureVector::push_back(Figure* val) noexcept {
 }
 
 
-const Figure* FigureVector::get(int ind) const {
+const Figure* FigureVector::Get(int ind) const {
     if (ind >= 0 && ind < size_) {
         int real_ind = (head + ind) % cap;
         return buf[real_ind];
@@ -45,7 +45,7 @@ const Figure* FigureVector::get(int ind) const {
     throw std::out_of_range("Index is out of range");
 }
 
-void FigureVector::remove(int ind){
+void FigureVector::Remove(int ind){
     if (ind < 0 || ind > size_) {
         throw std::invalid_argument("Index out of range");
     }
@@ -65,7 +65,7 @@ void FigureVector::remove(int ind){
     size_--;
 
     if (size_ <= cap / 3) {
-        resize(cap * 3/5);
+        Resize(cap * 3/5);
     }
 }
 

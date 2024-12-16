@@ -13,7 +13,7 @@ public:
     Romb(const Romb& other);
     Romb(Romb&& other) noexcept;
 
-    virtual Point get_center() const noexcept override;
+    virtual Point Get_center() const noexcept override;
 
     Romb& operator=(const Romb &other);
     Romb& operator=(Romb &&other);
@@ -23,7 +23,7 @@ public:
     ~Romb(){};
 
 private:
-    double get_square() const noexcept override;
-    bool is_romb() const noexcept;
+    double Get_square() const noexcept override;
+    bool Is_romb() const noexcept;
     Point points[4];
 };

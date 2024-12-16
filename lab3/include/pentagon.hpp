@@ -14,7 +14,7 @@ public:
     Pentagon(const Pentagon& other);
     Pentagon(Pentagon&& other) noexcept;
 
-    virtual Point get_center() const noexcept override;
+    virtual Point Get_center() const noexcept override;
 
     Pentagon& operator=(const Pentagon &other);
     Pentagon& operator=(Pentagon &&other);
@@ -24,8 +24,8 @@ public:
     ~Pentagon(){};
 
 private:
-    double get_square() const noexcept override;
-    bool is_pentagon() const noexcept;
+    double Get_square() const noexcept override;
+    bool Is_pentagon() const noexcept;
     Point points[5];
 
 };

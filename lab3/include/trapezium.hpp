@@ -13,7 +13,7 @@ public:
     Trapezium(const Trapezium& other);
     Trapezium(Trapezium&& other) noexcept;
 
-    virtual Point get_center() const noexcept override;
+    virtual Point Get_center() const noexcept override;
 
     Trapezium& operator=(const Trapezium &other);
     Trapezium& operator=(Trapezium &&other);
@@ -23,7 +23,7 @@ public:
     ~Trapezium(){};
 
 private:
-    double get_square() const noexcept override;
-    bool is_trapezium() const noexcept;
+    double Get_square() const noexcept override;
+    bool Is_trapezium() const noexcept;
     Point points[4];
 };

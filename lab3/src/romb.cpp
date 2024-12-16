@@ -1,7 +1,7 @@
 #include "../include/romb.hpp"
 #include <cmath>
 
-bool Romb::is_romb() const noexcept {
+bool Romb::Is_romb() const noexcept {
     double x1 = points[0].x_; double y1 = points[0].y_;
     double x2 = points[1].x_; double y2 = points[1].y_;
     double x3 = points[2].x_; double y3 = points[2].y_;
@@ -16,11 +16,11 @@ bool Romb::is_romb() const noexcept {
         return false;
     }
 
-    if (vector_prod(points[1] - points[0], points[3] - points[2]) > eps){
+    if (Vector_prod(points[1] - points[0], points[3] - points[2]) > eps){
         return false;
     }
 
-    if (scalar_prod(points[2] - points[1], points[0] - points[3]) > eps){
+    if (Scalar_prod(points[2] - points[1], points[0] - points[3]) > eps){
         return false;
     }
 
@@ -30,7 +30,7 @@ bool Romb::is_romb() const noexcept {
 Romb::Romb() : points{Point(), Point(), Point(), Point()} {}
 
 Romb::Romb(Point p1, Point p2, Point p3, Point p4) : points{p1, p2, p3, p4}  {
-    if (!this->is_romb()){
+    if (!this->Is_romb()){
         throw std::logic_error("Not a Romb!");
     }
 }
@@ -48,7 +48,7 @@ Romb::Romb(Romb&& other) noexcept {
     }
 }
 
-Point Romb::get_center() const noexcept {
+Point Romb::Get_center() const noexcept {
     double x = 0, y = 0;
     for(size_t i = 0; i < 4; ++i){
         x += points[i].x_;
@@ -75,10 +75,7 @@ Romb& Romb::operator=(Romb &&other){
     }
 
     for(size_t i = 0; i < 4; ++i){
-        points[i] = std::move(other.points[i]);
-        //points[i] = other.points[i];
-        //other.points[i] = nullptr;
-        
+        points[i] = std::move(other.points[i]);  
     }
 
     return *this;
@@ -94,7 +91,6 @@ bool Romb::operator==(const Romb& other) const {
 }
 
 std::ostream& operator<<(std::ostream& os, const Romb& other){
-    // os << "Romb's coordinates: ";
     for(size_t i = 0; i < 4; ++i){
         os << other.points[i] << std::endl;
     }
@@ -108,7 +104,7 @@ std::istream& operator>>(std::istream& is, Romb& other) {
     return is;
 }
 
-double Romb::get_square() const noexcept {
+double Romb::Get_square() const noexcept {
     double x1 = points[0].x_; double y1 = points[0].y_;
     double x2 = points[1].x_; double y2 = points[1].y_;
     double x3 = points[2].x_; double y3 = points[2].y_;
@@ -121,5 +117,5 @@ double Romb::get_square() const noexcept {
 }
 
 Romb::operator double() const noexcept {
-    return get_square();
+    return Get_square();
 }

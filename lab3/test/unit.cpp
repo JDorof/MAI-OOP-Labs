@@ -80,8 +80,8 @@ TEST(Trapezium, test_04)
     );
     double x = 1.5;
     Point p(x, 2);
-    ASSERT_TRUE(Point(tr1.get_center() - p).x_ < test_eps);
-    ASSERT_TRUE(Point(tr1.get_center() - p).y_ < test_eps);
+    ASSERT_TRUE(Point(tr1.Get_center() - p).x_ < test_eps);
+    ASSERT_TRUE(Point(tr1.Get_center() - p).y_ < test_eps);
 }
 
 
@@ -166,8 +166,8 @@ TEST(Romb, test_04)
         Point(1, 2)
     );
     Point p(0, 2);
-    ASSERT_TRUE(Point(rec1.get_center() - p).x_ < test_eps);
-    ASSERT_TRUE(Point(rec1.get_center() - p).y_ < test_eps);
+    ASSERT_TRUE(Point(rec1.Get_center() - p).x_ < test_eps);
+    ASSERT_TRUE(Point(rec1.Get_center() - p).y_ < test_eps);
 }
 
 
@@ -201,8 +201,8 @@ TEST(Pentagon, test_00)
     );
     ASSERT_TRUE(double(pt1) - 10 < test_eps);
     Point p(5, 5);
-    ASSERT_TRUE(Point(pt1.get_center() - p).x_ < test_eps);
-    ASSERT_TRUE(Point(pt1.get_center() - p).y_ < test_eps);
+    ASSERT_TRUE(Point(pt1.Get_center() - p).x_ < test_eps);
+    ASSERT_TRUE(Point(pt1.Get_center() - p).y_ < test_eps);
 }
 
 TEST(Vector, test_03)
@@ -216,9 +216,9 @@ TEST(Vector, test_03)
         Point(3.0, 0.0)
     );
     for (int i = 0; i < 10; ++i){
-        vec.push_back(&tr1);
+        vec.Push_back(&tr1);
     }
-    ASSERT_TRUE(vec.size() == 10);
+    ASSERT_TRUE(vec.Size() == 10);
 }
 
 TEST(Vector, test_04)
@@ -232,14 +232,14 @@ TEST(Vector, test_04)
         Point(3.0, 0.0)
     );
     for (int i = 0; i < 10; ++i){
-        vec.push_back(&tr1);
+        vec.Push_back(&tr1);
     }
     for (int i = 0; i < 5; ++i){
-        vec.remove(0);
+        vec.Remove(0);
     }
-    ASSERT_TRUE(vec.size() == 5);
+    ASSERT_TRUE(vec.Size() == 5);
     for (int i = 0; i < 4; ++i){
-        ASSERT_TRUE((double(*vec.get(i)) - double(*vec.get(i+1))) < test_eps);
+        ASSERT_TRUE((double(*vec.Get(i)) - double(*vec.Get(i+1))) < test_eps);
     }
 }
 
@@ -254,14 +254,14 @@ TEST(Vector, test_05)
         Point(3.0, 0.0)
     );
     for (int i = 0; i < 10; ++i){
-        vec.push_back(&tr1);
+        vec.Push_back(&tr1);
     }
     for (int i = 0; i < 5; ++i){
-        vec.remove(0);
+        vec.Remove(0);
     }
-    ASSERT_TRUE(vec.size() == 5);
+    ASSERT_TRUE(vec.Size() == 5);
     for (int i = 0; i < 4; ++i){
-        ASSERT_TRUE((double(*vec.get(i)) - double(*vec.get(i+1))) < test_eps);
+        ASSERT_TRUE((double(*vec.Get(i)) - double(*vec.Get(i+1))) < test_eps);
     }
 }
 
