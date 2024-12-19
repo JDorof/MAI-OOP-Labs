@@ -1,0 +1,49 @@
+Start testing: Dec 19 15:22 MSK
+----------------------------------------------------------
+1/1 Testing: oop_tests
+1/1 Test: oop_tests
+Command: "/home/justdema/OOP/MAI-OOP-Labs/lab5/build/oop_tests"
+Directory: /home/justdema/OOP/MAI-OOP-Labs/lab5/build
+"oop_tests" start time: Dec 19 15:22 MSK
+Output:
+----------------------------------------------------------
+[==========] Running 5 tests from 2 test suites.
+[----------] Global test environment set-up.
+[----------] 1 test from FixedBlockMemoryResourceTest
+[ RUN      ] FixedBlockMemoryResourceTest.AllocationDeallocation
+/home/justdema/OOP/MAI-OOP-Labs/lab5/tests/tests.cpp:29: Failure
+Expected equality of these values:
+  ptr3
+    Which is: 0x563ccd5bc5d0
+  ptr1
+    Which is: 0x563ccd5bc5b0
+[  FAILED  ] FixedBlockMemoryResourceTest.AllocationDeallocation (0 ms)
+[----------] 1 test from FixedBlockMemoryResourceTest (0 ms total)
+
+[----------] 4 tests from ForwardListTest
+[ RUN      ] ForwardListTest.IntPushFront
+[       OK ] ForwardListTest.IntPushFront (0 ms)
+[ RUN      ] ForwardListTest.IntPopFront
+[       OK ] ForwardListTest.IntPopFront (0 ms)
+[ RUN      ] ForwardListTest.ComplexTypeOperations
+[       OK ] ForwardListTest.ComplexTypeOperations (0 ms)
+[ RUN      ] ForwardListTest.IteratorTraversal
+[       OK ] ForwardListTest.IteratorTraversal (0 ms)
+[----------] 4 tests from ForwardListTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 5 tests from 2 test suites ran. (0 ms total)
+[  PASSED  ] 4 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] FixedBlockMemoryResourceTest.AllocationDeallocation
+
+ 1 FAILED TEST
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Failed.
+"oop_tests" end time: Dec 19 15:22 MSK
+"oop_tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Dec 19 15:22 MSK
