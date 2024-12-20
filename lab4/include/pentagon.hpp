@@ -3,29 +3,29 @@
 #include "../include/figure.hpp"
 #include <iostream>
 
-
-class Pentagon : public Figure {
-    friend std::ostream& operator<<(std::ostream& os, const Pentagon& other);
-    friend std::istream& operator>>(std::istream& is, Pentagon& other);
-
+template <Scalar T>
+class Pentagon : public Figure<T> {
 public:
+    friend std::ostream& operator<<(std::ostream& os, const Pentagon<T>& other);
+    friend std::istream& operator>>(std::istream& is, Pentagon<T>& other);
+
     Pentagon();
-    Pentagon(Point p1, Point p2, Point p3, Point p4, Point p5);
-    Pentagon(const Pentagon& other);
-    Pentagon(Pentagon&& other) noexcept;
+    Pentagon(Point<T> p1, Point<T> p2, Point<T> p3, Point<T> p4, Point<T> p5);
+    Pentagon(const Pentagon<T>& other);
+    Pentagon(Pentagon<T>&& other) noexcept;
 
-    virtual Point Get_center() const noexcept override;
-
-    Pentagon& operator=(const Pentagon &other);
-    Pentagon& operator=(Pentagon &&other);
-    bool operator==(const Pentagon &other) const;
+    Point<T> Get_center() const noexcept override;
     explicit operator double() const noexcept override;
 
-    ~Pentagon(){};
+    Pentagon<T>& operator=(const Pentagon<T>& other);
+    Pentagon<T>& operator=(Pentagon<T>&& other);
+    bool operator==(const Pentagon<T>& other) const;
+
+    ~Pentagon() = default;
 
 private:
     double Get_square() const noexcept override;
     bool Is_pentagon() const noexcept;
-    Point points[5];
 
+    Point<T> points[5];
 };

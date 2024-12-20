@@ -3,21 +3,23 @@
 #include "../include/figure.hpp"
 #include <iostream>
 
-class Trapezium : public Figure {
-    friend std::ostream& operator<<(std::ostream& os, const Trapezium& other);
-    friend std::istream& operator>>(std::istream& is, Trapezium& other);
-
+template<Scalar T>
+class Trapezium : public Figure<T> {
 public:
+
+    friend std::ostream& operator<<(std::ostream& os, const Trapezium<T>& other);
+    friend std::istream& operator>>(std::istream& is, Trapezium<T>& other);
+    
     Trapezium();
-    Trapezium(Point p1, Point p2, Point p3, Point p4);
+    Trapezium(Point<T> p1, Point<T> p2, Point<T> p3, Point<T> p4);
     Trapezium(const Trapezium& other);
     Trapezium(Trapezium&& other) noexcept;
 
-    virtual Point Get_center() const noexcept override;
+    virtual Point<T> Get_center() const noexcept override;
 
-    Trapezium& operator=(const Trapezium &other);
-    Trapezium& operator=(Trapezium &&other);
-    bool operator==(const Trapezium &other) const;
+    Trapezium<T>& operator=(const Trapezium<T> &other);
+    Trapezium<T>& operator=(Trapezium<T> &&other);
+    bool operator==(const Trapezium<T> &other) const;
     explicit operator double() const noexcept override;
 
     ~Trapezium(){};
@@ -25,5 +27,5 @@ public:
 private:
     double Get_square() const noexcept override;
     bool Is_trapezium() const noexcept;
-    Point points[4];
+    Point<T> points[4];
 };

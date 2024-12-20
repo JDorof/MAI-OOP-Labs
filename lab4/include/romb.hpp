@@ -3,27 +3,28 @@
 #include "../include/figure.hpp"
 #include <iostream>
 
-class Romb : public Figure {
-    friend std::ostream& operator<<(std::ostream& os, const Romb& other);
-    friend std::istream& operator>>(std::istream& is, Romb& other);
-
+template<Scalar T>
+class Romb : public Figure<T> {
 public:
     Romb();
-    Romb(Point p1, Point p2, Point p3, Point p4);
-    Romb(const Romb& other);
-    Romb(Romb&& other) noexcept;
+    Romb(Point<T> p1, Point<T> p2, Point<T> p3, Point<T> p4);
+    Romb(const Romb<T>& other);
+    Romb(Romb<T>&& other) noexcept;
 
-    virtual Point Get_center() const noexcept override;
+    virtual Point<T> Get_center() const noexcept override;
 
-    Romb& operator=(const Romb &other);
-    Romb& operator=(Romb &&other);
-    bool operator==(const Romb &other) const;
+    Romb<T>& operator=(const Romb<T> &other);
+    Romb<T>& operator=(Romb<T> &&other);
+    bool operator==(const Romb<T> &other) const;
     explicit operator double() const noexcept override;
 
-    ~Romb(){};
+    ~Romb() {};
+
+    friend std::ostream& operator<< <T>(std::ostream& os, const Romb<T>& romb);
+    friend std::istream& operator>> <T>(std::istream& is, Romb<T>& romb);
 
 private:
     double Get_square() const noexcept override;
     bool Is_romb() const noexcept;
-    Point points[4];
+    Point<T> points[4];
 };

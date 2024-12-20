@@ -1,97 +1,116 @@
 #include "../include/trapezium.hpp"
+#include <stdexcept>
+#include <cmath>
 
-bool Trapezium::Is_trapezium() const noexcept {
-    if (Vector_prod(points[1] - points[0], points[3] - points[2]) < eps){
+// Проверка, является ли фигура трапецией
+template<Scalar T>
+bool Trapezium<T>::Is_trapezium() const noexcept {
+    if (std::abs(Vector_prod(points[1] - points[0], points[3] - points[2])) < eps) {
         return true;
     }
-    if (Scalar_prod(points[2] - points[1], points[0] - points[3]) < eps){
+    if (std::abs(Vector_prod(points[2] - points[1], points[0] - points[3])) < eps) {
         return true;
     }
     return false;
 }
 
-Trapezium::Trapezium() : points{Point(), Point(), Point(), Point()} {}
+// Конструкторы
+template<Scalar T>
+Trapezium<T>::Trapezium() : points{Point<T>(), Point<T>(), Point<T>(), Point<T>()} {}
 
-Trapezium::Trapezium(Point p1, Point p2, Point p3, Point p4) : points{p1, p2, p3, p4}  {
-    if (!this->Is_trapezium()){
+template<Scalar T>
+Trapezium<T>::Trapezium(Point<T> p1, Point<T> p2, Point<T> p3, Point<T> p4) : points{p1, p2, p3, p4} {
+    if (!Is_trapezium()) {
         throw std::logic_error("Not a Trapezium!");
     }
 }
 
-Trapezium::Trapezium(const Trapezium& other) : points{Point(), Point(), Point(), Point()}{
-    for (int i = 0; i < 4; ++i){
+template<Scalar T>
+Trapezium<T>::Trapezium(const Trapezium<T>& other) {
+    for (size_t i = 0; i < 4; ++i) {
         points[i] = other.points[i];
     }
 }
 
-Trapezium::Trapezium(Trapezium&& other) noexcept {
-    for (int i = 0; i < 4; ++i){
-        points[i] = other.points[i];
-        other.points[i] = Point();
+template<Scalar T>
+Trapezium<T>::Trapezium(Trapezium<T>&& other) noexcept {
+    for (size_t i = 0; i < 4; ++i) {
+        points[i] = std::move(other.points[i]);
     }
 }
 
-Point Trapezium::Get_center() const noexcept {
-    double x = 0, y = 0;
-    for(size_t i = 0; i < 4; ++i){
+// Получение центра
+template<Scalar T>
+Point<T> Trapezium<T>::Get_center() const noexcept {
+    T x = 0, y = 0;
+    for (size_t i = 0; i < 4; ++i) {
         x += points[i].x_;
         y += points[i].y_;
     }
-    return Point(x / 4.0, y / 4.0);
+    return Point<T>(x / 4, y / 4);
 }
 
-Trapezium& Trapezium::operator=(const Trapezium &other){
+// Операторы присваивания
+template<Scalar T>
+Trapezium<T>& Trapezium<T>::operator=(const Trapezium<T>& other) {
     if (this == &other) {
         return *this;
     }
-
-    for(size_t i = 0; i < 4; ++i){
+    for (size_t i = 0; i < 4; ++i) {
         points[i] = other.points[i];
     }
-
     return *this;
 }
 
-Trapezium& Trapezium::operator=(Trapezium &&other){
+template<Scalar T>
+Trapezium<T>& Trapezium<T>::operator=(Trapezium<T>&& other) {
     if (this == &other) {
         return *this;
     }
-
-    for(size_t i = 0; i < 4; ++i){
+    for (size_t i = 0; i < 4; ++i) {
         points[i] = std::move(other.points[i]);
     }
-
     return *this;
 }
 
-bool Trapezium::operator==(const Trapezium& other) const {
-    for(size_t i = 0; i < 4; ++i){
-        if(points[i] != other.points[i]){
+// Оператор сравнения
+template<Scalar T>
+bool Trapezium<T>::operator==(const Trapezium<T>& other) const {
+    for (size_t i = 0; i < 4; ++i) {
+        if (points[i] != other.points[i]) {
             return false;
         }
     }
     return true;
 }
 
-std::ostream& operator<<(std::ostream& os, const Trapezium& other){
-    for(size_t i = 0; i < 4; ++i){
+// Потоковые операторы
+template<Scalar T>
+std::ostream& operator<<(std::ostream& os, const Trapezium<T>& other) {
+    for (size_t i = 0; i < 4; ++i) {
         os << other.points[i] << std::endl;
     }
     return os;
 }
 
-std::istream& operator>>(std::istream& is, Trapezium& other) {
+template<Scalar T>
+std::istream& operator>>(std::istream& is, Trapezium<T>& other) {
     for (size_t i = 0; i < 4; ++i) {
         is >> other.points[i];
     }
     return is;
 }
 
-double Trapezium::Get_square() const noexcept {
-    double S = Vector_prod(points[3] - points[1], points[2] - points[0]) / 2;
-    return S;
+// Вычисление площади
+template<Scalar T>
+double Trapezium<T>::Get_square() const noexcept {
+    T d1 = std::sqrt(std::pow(points[0].x_ - points[2].x_, 2) + std::pow(points[0].y_ - points[2].y_, 2));
+    T d2 = std::sqrt(std::pow(points[1].x_ - points[3].x_, 2) + std::pow(points[1].y_ - points[3].y_, 2));
+    return 0.5 * d1 * d2;
 }
 
-Trapezium::operator double() const noexcept {
+// Приведение к double
+template<Scalar T>
+Trapezium<T>::operator double() const noexcept {
     return Get_square();
 }
