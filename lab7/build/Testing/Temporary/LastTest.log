@@ -1,0 +1,143 @@
+Start testing: Dec 21 01:54 MSK
+----------------------------------------------------------
+1/5 Testing: NPCFactoryTest.CreateNPC
+1/5 Test: NPCFactoryTest.CreateNPC
+Command: "/home/justdema/OOP/MAI-OOP-Labs/lab7/build/runTests" "--gtest_filter=NPCFactoryTest.CreateNPC" "--gtest_also_run_disabled_tests"
+Directory: /home/justdema/OOP/MAI-OOP-Labs/lab7/build
+"NPCFactoryTest.CreateNPC" start time: Dec 21 01:54 MSK
+Output:
+----------------------------------------------------------
+Note: Google Test filter = NPCFactoryTest.CreateNPC
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NPCFactoryTest
+[ RUN      ] NPCFactoryTest.CreateNPC
+[       OK ] NPCFactoryTest.CreateNPC (0 ms)
+[----------] 1 test from NPCFactoryTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"NPCFactoryTest.CreateNPC" end time: Dec 21 01:54 MSK
+"NPCFactoryTest.CreateNPC" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/5 Testing: NPCFactoryTest.DumpToStream
+2/5 Test: NPCFactoryTest.DumpToStream
+Command: "/home/justdema/OOP/MAI-OOP-Labs/lab7/build/runTests" "--gtest_filter=NPCFactoryTest.DumpToStream" "--gtest_also_run_disabled_tests"
+Directory: /home/justdema/OOP/MAI-OOP-Labs/lab7/build
+"NPCFactoryTest.DumpToStream" start time: Dec 21 01:54 MSK
+Output:
+----------------------------------------------------------
+Note: Google Test filter = NPCFactoryTest.DumpToStream
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NPCFactoryTest
+[ RUN      ] NPCFactoryTest.DumpToStream
+/home/justdema/OOP/MAI-OOP-Labs/lab7/tests/unit.cpp:35: Failure
+Expected equality of these values:
+  out.str()
+    Which is: "Elf Elrond 15 25 1\n"
+  expected
+    Which is: "elf Elrond 15 25 1\n"
+[  FAILED  ] NPCFactoryTest.DumpToStream (0 ms)
+[----------] 1 test from NPCFactoryTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] NPCFactoryTest.DumpToStream
+
+ 1 FAILED TEST
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Failed.
+"NPCFactoryTest.DumpToStream" end time: Dec 21 01:54 MSK
+"NPCFactoryTest.DumpToStream" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/5 Testing: NPCFactoryTest.LoadFromStream
+3/5 Test: NPCFactoryTest.LoadFromStream
+Command: "/home/justdema/OOP/MAI-OOP-Labs/lab7/build/runTests" "--gtest_filter=NPCFactoryTest.LoadFromStream" "--gtest_also_run_disabled_tests"
+Directory: /home/justdema/OOP/MAI-OOP-Labs/lab7/build
+"NPCFactoryTest.LoadFromStream" start time: Dec 21 01:54 MSK
+Output:
+----------------------------------------------------------
+Note: Google Test filter = NPCFactoryTest.LoadFromStream
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NPCFactoryTest
+[ RUN      ] NPCFactoryTest.LoadFromStream
+[       OK ] NPCFactoryTest.LoadFromStream (0 ms)
+[----------] 1 test from NPCFactoryTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"NPCFactoryTest.LoadFromStream" end time: Dec 21 01:54 MSK
+"NPCFactoryTest.LoadFromStream" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/5 Testing: NPCFactoryTest.MultipleNPCSerialization
+4/5 Test: NPCFactoryTest.MultipleNPCSerialization
+Command: "/home/justdema/OOP/MAI-OOP-Labs/lab7/build/runTests" "--gtest_filter=NPCFactoryTest.MultipleNPCSerialization" "--gtest_also_run_disabled_tests"
+Directory: /home/justdema/OOP/MAI-OOP-Labs/lab7/build
+"NPCFactoryTest.MultipleNPCSerialization" start time: Dec 21 01:54 MSK
+Output:
+----------------------------------------------------------
+Note: Google Test filter = NPCFactoryTest.MultipleNPCSerialization
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NPCFactoryTest
+[ RUN      ] NPCFactoryTest.MultipleNPCSerialization
+[       OK ] NPCFactoryTest.MultipleNPCSerialization (0 ms)
+[----------] 1 test from NPCFactoryTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"NPCFactoryTest.MultipleNPCSerialization" end time: Dec 21 01:54 MSK
+"NPCFactoryTest.MultipleNPCSerialization" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/5 Testing: NPCLogicTest.Fight
+5/5 Test: NPCLogicTest.Fight
+Command: "/home/justdema/OOP/MAI-OOP-Labs/lab7/build/runTests" "--gtest_filter=NPCLogicTest.Fight" "--gtest_also_run_disabled_tests"
+Directory: /home/justdema/OOP/MAI-OOP-Labs/lab7/build
+"NPCLogicTest.Fight" start time: Dec 21 01:54 MSK
+Output:
+----------------------------------------------------------
+Note: Google Test filter = NPCLogicTest.Fight
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NPCLogicTest
+[ RUN      ] NPCLogicTest.Fight
+[       OK ] NPCLogicTest.Fight (0 ms)
+[----------] 1 test from NPCLogicTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"NPCLogicTest.Fight" end time: Dec 21 01:54 MSK
+"NPCLogicTest.Fight" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Dec 21 01:54 MSK

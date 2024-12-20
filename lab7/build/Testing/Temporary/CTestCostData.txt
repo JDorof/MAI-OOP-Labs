@@ -1,0 +1,7 @@
+NPCFactoryTest.CreateNPC 1 0.00150686
+NPCFactoryTest.DumpToStream 0 0
+NPCFactoryTest.LoadFromStream 1 0.00112468
+NPCFactoryTest.MultipleNPCSerialization 1 0.00134933
+NPCLogicTest.Fight 1 0.00118844
+---
+NPCFactoryTest.DumpToStream

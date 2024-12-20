@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/lab.dir/src/entity.cpp.o CMakeFiles/lab.dir/src/game.cpp.o CMakeFiles/lab.dir/src/main.cpp.o CMakeFiles/lab.dir/src/npc.cpp.o -o lab 
