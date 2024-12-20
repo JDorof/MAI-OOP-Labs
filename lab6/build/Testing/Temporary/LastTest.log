@@ -1,0 +1,133 @@
+Start testing: Dec 20 15:01 MSK
+----------------------------------------------------------
+1/5 Testing: NPCFactoryTest.CreateNPC
+1/5 Test: NPCFactoryTest.CreateNPC
+Command: "/home/justdema/OOP/MAI-OOP-Labs/lab6/build/runTests" "--gtest_filter=NPCFactoryTest.CreateNPC" "--gtest_also_run_disabled_tests"
+Directory: /home/justdema/OOP/MAI-OOP-Labs/lab6/build
+"NPCFactoryTest.CreateNPC" start time: Dec 20 15:01 MSK
+Output:
+----------------------------------------------------------
+Note: Google Test filter = NPCFactoryTest.CreateNPC
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NPCFactoryTest
+[ RUN      ] NPCFactoryTest.CreateNPC
+[       OK ] NPCFactoryTest.CreateNPC (0 ms)
+[----------] 1 test from NPCFactoryTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"NPCFactoryTest.CreateNPC" end time: Dec 20 15:01 MSK
+"NPCFactoryTest.CreateNPC" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/5 Testing: NPCFactoryTest.DumpToStream
+2/5 Test: NPCFactoryTest.DumpToStream
+Command: "/home/justdema/OOP/MAI-OOP-Labs/lab6/build/runTests" "--gtest_filter=NPCFactoryTest.DumpToStream" "--gtest_also_run_disabled_tests"
+Directory: /home/justdema/OOP/MAI-OOP-Labs/lab6/build
+"NPCFactoryTest.DumpToStream" start time: Dec 20 15:01 MSK
+Output:
+----------------------------------------------------------
+Note: Google Test filter = NPCFactoryTest.DumpToStream
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NPCFactoryTest
+[ RUN      ] NPCFactoryTest.DumpToStream
+[       OK ] NPCFactoryTest.DumpToStream (0 ms)
+[----------] 1 test from NPCFactoryTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"NPCFactoryTest.DumpToStream" end time: Dec 20 15:01 MSK
+"NPCFactoryTest.DumpToStream" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/5 Testing: NPCFactoryTest.LoadFromStream
+3/5 Test: NPCFactoryTest.LoadFromStream
+Command: "/home/justdema/OOP/MAI-OOP-Labs/lab6/build/runTests" "--gtest_filter=NPCFactoryTest.LoadFromStream" "--gtest_also_run_disabled_tests"
+Directory: /home/justdema/OOP/MAI-OOP-Labs/lab6/build
+"NPCFactoryTest.LoadFromStream" start time: Dec 20 15:01 MSK
+Output:
+----------------------------------------------------------
+Note: Google Test filter = NPCFactoryTest.LoadFromStream
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NPCFactoryTest
+[ RUN      ] NPCFactoryTest.LoadFromStream
+[       OK ] NPCFactoryTest.LoadFromStream (0 ms)
+[----------] 1 test from NPCFactoryTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"NPCFactoryTest.LoadFromStream" end time: Dec 20 15:01 MSK
+"NPCFactoryTest.LoadFromStream" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/5 Testing: NPCFactoryTest.MultipleNPCSerialization
+4/5 Test: NPCFactoryTest.MultipleNPCSerialization
+Command: "/home/justdema/OOP/MAI-OOP-Labs/lab6/build/runTests" "--gtest_filter=NPCFactoryTest.MultipleNPCSerialization" "--gtest_also_run_disabled_tests"
+Directory: /home/justdema/OOP/MAI-OOP-Labs/lab6/build
+"NPCFactoryTest.MultipleNPCSerialization" start time: Dec 20 15:01 MSK
+Output:
+----------------------------------------------------------
+Note: Google Test filter = NPCFactoryTest.MultipleNPCSerialization
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NPCFactoryTest
+[ RUN      ] NPCFactoryTest.MultipleNPCSerialization
+[       OK ] NPCFactoryTest.MultipleNPCSerialization (0 ms)
+[----------] 1 test from NPCFactoryTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"NPCFactoryTest.MultipleNPCSerialization" end time: Dec 20 15:01 MSK
+"NPCFactoryTest.MultipleNPCSerialization" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/5 Testing: NPCLogicTest.FightRules
+5/5 Test: NPCLogicTest.FightRules
+Command: "/home/justdema/OOP/MAI-OOP-Labs/lab6/build/runTests" "--gtest_filter=NPCLogicTest.FightRules" "--gtest_also_run_disabled_tests"
+Directory: /home/justdema/OOP/MAI-OOP-Labs/lab6/build
+"NPCLogicTest.FightRules" start time: Dec 20 15:01 MSK
+Output:
+----------------------------------------------------------
+Note: Google Test filter = NPCLogicTest.FightRules
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NPCLogicTest
+[ RUN      ] NPCLogicTest.FightRules
+[       OK ] NPCLogicTest.FightRules (0 ms)
+[----------] 1 test from NPCLogicTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"NPCLogicTest.FightRules" end time: Dec 20 15:01 MSK
+"NPCLogicTest.FightRules" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Dec 20 15:01 MSK
